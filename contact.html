@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Église Béatitude - Assemblée de Dieu de Côte d'Ivoire</title>
+    <title>Contact | Église des Assemblées de Dieu - Biétry Temple La Grâce</title>
     <style>
         /* Global Styles */
         :root {
@@ -15,8 +15,6 @@
             --dark-gray: #333333;
             --text-color: #222222;
             --light-blue: #E6F0FA;
-            --light-gold: rgba(212, 175, 55, 0.1);
-            --light-primary: rgba(0, 64, 128, 0.1);
         }
 
         * {
@@ -44,12 +42,7 @@
             padding: 0 20px;
         }
 
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
+        h1, h2, h3, h4, h5, h6 {
             font-family: 'Playfair Display', serif;
             font-weight: 600;
             color: var(--primary-color);
@@ -88,6 +81,7 @@
         .section-title {
             font-size: 2.5rem;
             margin-bottom: 1rem;
+            margin-top: 60px;
             text-align: center;
             position: relative;
             padding-bottom: 15px;
@@ -115,6 +109,21 @@
 
         .section-title:hover::after {
             width: 120px;
+        }
+
+        .section-subtitle {
+            font-size: 1.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease 0.2s;
+        }
+
+        .section-subtitle.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         /* Header Styles */
@@ -153,7 +162,7 @@
         }
 
         .logo img {
-            height: 50px;
+            height: 100px;
             margin-right: 15px;
             transition: transform 0.3s ease;
         }
@@ -355,235 +364,125 @@
             }
         }
 
-        /* Hero Section for Annex */
-        .annex-hero {
-            height: 70vh;
-            position: relative;
-            margin-top: 80px;
-            background-image: linear-gradient(rgba(0, 64, 128, 0.6), rgba(0, 64, 128, 0.4)), url('https://i.postimg.cc/QtD4qKYH/beatitude.jpg');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: var(--white);
-        }
-
-        .annex-hero-content {
-            max-width: 800px;
-            padding: 0 20px;
-        }
-
-        .annex-hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            color: var(--white);
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-            animation: fadeInUp 1s ease forwards;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Info Section */
-        .info-section {
-            padding: 80px 0;
+        /* Contact Section Styles */
+        .contact-section {
+            padding: 120px 0 80px;
             background-color: var(--white);
         }
 
-        .info-container {
-            display: flex;
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             gap: 40px;
-            margin-top: 30px;
+            margin-top: 40px;
         }
 
-        .info-card {
-            flex: 1;
+        .contact-info {
             background-color: var(--light-gray);
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.4s ease;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
         }
 
-        .info-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        .contact-info::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background-color: var(--secondary-color);
         }
 
-        .info-item {
+        .contact-info2 {
+            background-color: var(--primary-color);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-info2::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background-color: var(--secondary-color);
+        }
+
+        .contact-map {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            height: 500px;
+        }
+
+        .contact-map iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .contact-item {
             display: flex;
-            margin-bottom: 25px;
-            padding-bottom: 25px;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+            align-items: flex-start;
         }
 
-        .info-item:last-child {
-            margin-bottom: 0;
-            padding-bottom: 0;
-            border-bottom: none;
-        }
-
-        .info-icon {
-            width: 50px;
-            height: 50px;
-            background-color: var(--light-gold);
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(212, 175, 55, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-right: 20px;
             flex-shrink: 0;
-        }
-
-        .info-icon i {
-            font-size: 1.5rem;
             color: var(--secondary-color);
+            font-size: 1.5rem;
         }
 
-        .info-content h3 {
-            font-size: 1.5rem;
+        .contact-details h3 {
+            font-size: 1.3rem;
             margin-bottom: 10px;
             color: var(--primary-color);
         }
 
-        .info-content p {
-            color: var(--dark-gray);
-            line-height: 1.7;
-        }
-
-        .map-container {
-            flex: 1;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            height: 500px;
-        }
-
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        /* Announcements Section */
-        .announcements-section {
-            padding: 80px 0;
-            background-color: var(--light-gray);
-        }
-
-        .announcements-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .carousel {
-            position: relative;
-            overflow: hidden;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            margin-top: 40px;
-        }
-
-        .carousel-track {
-            display: flex;
-            transition: transform 0.5s ease;
-        }
-
-        .carousel-slide {
-            min-width: 100%;
-            position: relative;
-        }
-
-        .carousel-slide img {
-            width: 100%;
-            height: 450px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .carousel-caption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
-            color: var(--white);
-            padding: 30px 20px 20px;
-        }
-
-        .carousel-caption h3 {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-        }
-
-        .carousel-caption p {
+        .contact-details p {
+            margin-bottom: 5px;
             font-size: 1.1rem;
-            opacity: 0.9;
         }
 
-        .carousel-controls {
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            transform: translateY(-50%);
-            padding: 0 20px;
+        .contact-hours {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px dashed rgba(0, 64, 128, 0.2);
         }
 
-        .carousel-btn {
-            background-color: rgba(255, 255, 255, 0.7);
-            border: none;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .carousel-btn:hover {
-            background-color: var(--white);
-            transform: scale(1.1);
-        }
-
-        .carousel-btn i {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-        }
-
-        .carousel-dots {
-            display: flex;
-            justify-content: center;
+        .hours-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
             margin-top: 20px;
-            gap: 10px;
         }
 
-        .carousel-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background-color: rgba(0, 64, 128, 0.3);
-            cursor: pointer;
-            transition: all 0.3s ease;
+        .hour-item {
+            background-color: rgba(212, 175, 55, 0.05);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid var(--secondary-color);
         }
 
-        .carousel-dot.active {
-            background-color: var(--primary-color);
-            transform: scale(1.2);
+        .hour-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 5px;
+            font-size: 1.1rem;
         }
 
         /* Footer Styles */
@@ -723,10 +622,6 @@
 
         /* Responsive Styles */
         @media (max-width: 992px) {
-            .info-container {
-                flex-direction: column;
-            }
-
             .footer-columns {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -734,6 +629,14 @@
             .footer-column:nth-child(3) {
                 grid-column: span 2;
                 transition-delay: 0.4s;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-map {
+                height: 400px;
             }
         }
 
@@ -784,16 +687,16 @@
                 padding: 10px 30px;
             }
 
-            .annex-hero h1 {
-                font-size: 2.5rem;
-            }
-
             .footer-columns {
                 grid-template-columns: 1fr;
             }
 
             .footer-column:nth-child(3) {
                 grid-column: span 1;
+            }
+
+            .hours-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -802,16 +705,17 @@
                 font-size: 2rem;
             }
 
-            .annex-hero {
-                height: 50vh;
+            .contact-info {
+                padding: 30px 20px;
             }
 
-            .annex-hero h1 {
-                font-size: 2rem;
+            .contact-item {
+                flex-direction: column;
+                align-items: flex-start;
             }
 
-            .carousel-slide img {
-                height: 300px;
+            .contact-icon {
+                margin-bottom: 15px;
             }
         }
 
@@ -828,9 +732,7 @@
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -855,121 +757,87 @@
                     <li><a href="qsn.html">Qui sommes-nous ?</a></li>
                     <li><a href="actualites.html">Actualités</a></li>
                     <li class="dropdown">
-                        <a href="#" class="active">Annexes <i class="fas fa-chevron-down"></i></a>
+                        <a href="#">Annexes <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="beatitude.html" class="active">Église Béatitude</a></li>
+                            <li><a href="beatitude.html">Église Béatitude</a></li>
                             <li><a href="adresurrection.html">Église Résurrection</a></li>
                             <li><a href="accomplissement.html">Église Accomplissement</a></li>
                             <li><a href="adebenezer.html">Église Ébènezer</a></li>
                         </ul>
                     </li>
-                    <li><a href="don.html">Faire un Don</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="don.html">Faire un don</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="annex-hero">
-        <div class="annex-hero-content">
-            <h1>Église Béatitude – Assemblée de Dieu de Côte d'Ivoire</h1>
-            <p>Un lieu de paix, de grâce et de croissance spirituelle</p>
-        </div>
-    </section>
-
-    <!-- Info Section -->
-    <section class="info-section">
+    <!-- Contact Section -->
+    <section class="contact-section">
         <div class="container">
-            <h2 class="section-title animate-on-scroll">Notre Église Annexe</h2>
-            <p class="slogan animate-on-scroll">"Bienheureux ceux qui ont faim et soif de la justice, car ils seront
-                rassasiés" - Matthieu 5:6</p>
-
-            <div class="info-container">
-                <div class="info-card animate-on-scroll">
-                    <div class="info-item">
-                        <div class="info-icon">
-                            <i class="fas fa-church"></i>
+            <h2 class="section-title animate-on-scroll">Contactez-nous</h2>
+            <p class="section-subtitle animate-on-scroll">Nous sommes là pour répondre à vos questions</p>
+            
+            <div class="contact-container">
+                <div class="contact-info animate-on-scroll">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
                         </div>
-                        <div class="info-content">
-                            <h3>Nom de l'Église</h3>
-                            <p>Église Béatitude - Assemblée de Dieu de Côte d'Ivoire</p>
-                        </div>
-                    </div>
-
-                    <div class="info-item">
-                        <div class="info-icon">
-                            <i class="fas fa-history"></i>
-                        </div>
-                        <div class="info-content">
-                            <h3>Historique de création</h3>
-                            <p>Fondée en 2010, l'Église Béatitude a commencé comme un petit groupe de prière dans le
-                                quartier de Port Bouët - Terre Rouge. Avec la bénédiction divine, notre communauté a
-                                grandi pour devenir un lieu de culte dynamique qui accueille aujourd'hui plus de 500
-                                fidèles chaque semaine.</p>
+                        <div class="contact-details">
+                            <h3>Notre Adresse</h3>
+                            <p>Bietry Cité Grand Moulin</p>
+                            <p>Abidjan, Côte d'Ivoire</p>
                         </div>
                     </div>
-
-                    <div class="info-item">
-                        <div class="info-icon">
-                            <i class="fas fa-user-alt"></i>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
                         </div>
-                        <div class="info-content">
-                            <h3>Pasteur principal</h3>
-                            <p>Pasteur Samuel Kouassi, diplômé de l'Institut Biblique des Assemblées de Dieu, dirige
-                                notre église avec sagesse et compassion depuis 2015. Son enseignement profondément
-                                biblique et son cœur pastoral ont guidé notre communauté vers une croissance spirituelle
-                                remarquable.</p>
+                        <div class="contact-details">
+                            <h3>Téléphone</h3>
+                            <p>+225 27 22 40 15 90</p>
+                            <p>Ouvert du Lundi au Samedi: 8h-18h</p>
                         </div>
                     </div>
-
-                    <div class="info-item">
-                        <div class="info-icon">
-                            <i class="fas fa-bullseye"></i>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
                         </div>
-                        <div class="info-content">
-                            <h3>Mission de l'église</h3>
-                            <p>Notre mission est d'annoncer l'Évangile de Jésus-Christ, de former des disciples engagés,
-                                et d'être une lumière dans notre communauté. Nous nous engageons à servir les
-                                nécessiteux, à fortifier les familles, et à créer un environnement où chacun peut
-                                grandir dans sa relation avec Dieu.</p>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p>contact@eglisegracebietry.org</p>
+                            <p>info@eglisegracebietry.org</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-hours">
+                        <h3>Heures de Cultes</h3>
+                        <div class="hours-grid">
+                            <div class="hour-item">
+                                <h4>Dimanche</h4>
+                                <p>9h30 - 12h</p>
+                            </div>
+                            <div class="hour-item">
+                                <h4>Mardi</h4>
+                                <p>18h30 - 20h30</p>
+                            </div>
+                            <div class="hour-item">
+                                <h4>Jeudi</h4>
+                                <p>18h30 - 20h30</p>
+                            </div>
+                            <div class="hour-item">
+                                <h4>Vendredi</h4>
+                                <p>18h30 - 20h30</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="map-container animate-on-scroll">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.246966187968!2d-3.952761225539851!3d5.26251553484255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc1eb7e1f1a1c9b%3A0x1d3a4d1f5b0e5b0!2sPort%20Bouet%2C%20Abidjan!5e0!3m2!1sfr!2sci!4v1689681833315!5m2!1sfr!2sci"
-                        allowfullscreen="" loading="lazy"></iframe>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Announcements Section -->
-    <section class="announcements-section">
-        <div class="container">
-            <h2 class="section-title animate-on-scroll">Annonces et Événements</h2>
-            <p class="slogan animate-on-scroll">Restez connectés avec la vie de notre église</p>
-
-            <div class="announcements-container">
-                <div class="carousel animate-on-scroll">
-                    <div class="carousel-track">
-                        <!-- Slides will be added dynamically by JavaScript -->
-                    </div>
-
-                    <div class="carousel-controls">
-                        <button class="carousel-btn prev-btn">
-                            <i class="fas fa-chevron-left"></i>
-                        </button>
-                        <button class="carousel-btn next-btn">
-                            <i class="fas fa-chevron-right"></i>
-                        </button>
-                    </div>
-
-                    <div class="carousel-dots">
-                        <!-- Dots will be added dynamically by JavaScript -->
-                    </div>
+                
+                <div class="contact-map animate-on-scroll">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.234647823948!2d-4.020826524238097!3d5.307558294733776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc1ebbb5b3b1a29%3A0x4b1cda242f9c4d8c!2sBietry%2C%20Abidjan!5e0!3m2!1sfr!2sci!4v1718827770700!5m2!1sfr!2sci" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
@@ -981,22 +849,22 @@
             <div class="footer-columns">
                 <div class="footer-column animate-on-scroll">
                     <h3>Contactez-nous</h3>
-                    <ul class="contact-info">
-                        <li><i class="fas fa-map-marker-alt"></i> Port Bouët - Terre Rouge, Abidjan</li>
-                        <li><i class="fas fa-phone"></i> +225 27 22 40 15 91</li>
-                        <li><i class="fas fa-envelope"></i> beatitude@adci.org</li>
-                        <li><i class="fas fa-clock"></i> Cultes: Dimanche 9h-12h | Mercredi 18h-20h</li>
+                    <ul class="contact-info2">
+                        <li><i class="fas fa-map-marker-alt"></i> Rue des Jardins, Biétry, Abidjan</li>
+                        <li><i class="fas fa-phone"></i> +225 27 22 40 15 90</li>
+                        <li><i class="fas fa-envelope"></i> contact@eglisegracebietry.org</li>
+                        <li><i class="fas fa-clock"></i> Cultes: Dimanche 8h-11h | Mercredi 18h-20h</li>
                     </ul>
                 </div>
 
                 <div class="footer-column animate-on-scroll">
                     <h3>Liens Rapides</h3>
                     <ul>
-                        <li><a href="#">Événements à venir</a></li>
-                        <li><a href="#">Ressources spirituelles</a></li>
-                        <li><a href="#">Programme des cellules</a></li>
-                        <li><a href="#">École du dimanche</a></li>
-                        <li><a href="#">Ministère de louange</a></li>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="qsn.html">Qui sommes-nous ?</a></li>
+                        <li><a href="actualites.html">Actualités</a></li>
+                        <li><a href="don.html">Faire un don</a></li>
+                        <li><a href="#">Contact</a></li>
                     </ul>
                 </div>
 
@@ -1014,7 +882,7 @@
         </div>
 
         <div class="footer-bottom animate-on-scroll">
-            <p>&copy; 2023 Église Béatitude - Assemblée de Dieu de Côte d'Ivoire. Tous droits réservés.</p>
+            <p>&copy; 2023 Église des Assemblées de Dieu - Temple La Grâce, Biétry. Tous droits réservés.</p>
         </div>
     </footer>
 
@@ -1051,121 +919,6 @@
             }
         });
 
-        // Carousel functionality
-        const carouselImages = [
-            {
-                url: 'https://images.unsplash.com/photo-1435527173128-983b87201f4d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2067&q=80',
-                title: 'Retraite Spirituelle Annuelle',
-                description: 'Rejoignez-nous du 15 au 17 septembre pour notre retraite spirituelle dans les montagnes',
-                link: 'https://www.facebook.com/share/p/12KJFg1BCEc/'
-            },
-            {
-                url: 'https://i.postimg.cc/FHRvQzvf/concertb.jpg',
-                title: 'Concert Beatitude',
-                description: 'Rejoignez-nous du 15 au 17 septembre pour notre retraite spirituelle dans les montagnes',
-                link: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Ftikerama.com%2Ffr%2Fevenement%2Fconcert-des-art'
-            },
-            {
-                url: 'https://images.unsplash.com/photo-1513326738677-b964603b136d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80',
-                title: 'Culte de Jeunesse Dynamique',
-                description: 'Vendredi 8 septembre à 19h - Un temps fort pour les jeunes de 15 à 30 ans',
-                link: 'https://www.facebook.com/share/p/12KJFg1BCEc/'
-            },
-            {
-                url: 'https://i.postimg.cc/85DGr5hb/church1.jpg',
-                title: 'Campagne d\'Évangélisation',
-                description: 'Du 1er au 10 octobre - Ensemble pour apporter la Bonne Nouvelle dans notre quartier',
-                link: 'https://www.facebook.com/share/p/12KJFg1BCEc/'
-            },
-            {
-                url: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1999&q=80',
-                title: 'Concert Gospel "Louanges Célestes"',
-                description: 'Samedi 23 septembre à 18h - Une soirée de louange avec notre chorale et invités spéciaux',
-                link: 'https://www.facebook.com/share/p/12KJFg1BCEc/'
-            }
-        ];
-
-        const carouselTrack = document.querySelector('.carousel-track');
-        const carouselDots = document.querySelector('.carousel-dots');
-        const prevBtn = document.querySelector('.prev-btn');
-        const nextBtn = document.querySelector('.next-btn');
-        let currentSlide = 0;
-
-        // Initialize carousel
-        function initCarousel() {
-            // Clear existing content
-            carouselTrack.innerHTML = '';
-            carouselDots.innerHTML = '';
-
-            // Create slides and dots
-            carouselImages.forEach((image, index) => {
-                // Create slide
-                const slide = document.createElement('div');
-                slide.className = 'carousel-slide';
-                slide.innerHTML = `
-               <a href="${image.link}" target="_blank">
-                 <img src="${image.url}" alt="${image.title}">
-                  </a>
-                   <div class="carousel-caption">
-                      <h3>${image.title}</h3>
-                       <p>${image.description}</p>
-                        </div>
-                `;
-                carouselTrack.appendChild(slide);
-
-                // Create dot
-                const dot = document.createElement('div');
-                dot.className = 'carousel-dot';
-                if (index === 0) dot.classList.add('active');
-                dot.addEventListener('click', () => goToSlide(index));
-                carouselDots.appendChild(dot);
-            });
-
-            // Set initial slide
-            goToSlide(0);
-        }
-
-        function goToSlide(index) {
-            currentSlide = index;
-            carouselTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
-
-            // Update active dot
-            document.querySelectorAll('.carousel-dot').forEach((dot, i) => {
-                if (i === currentSlide) {
-                    dot.classList.add('active');
-                } else {
-                    dot.classList.remove('active');
-                }
-            });
-        }
-
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % carouselImages.length;
-            goToSlide(currentSlide);
-        }
-
-        function prevSlide() {
-            currentSlide = (currentSlide - 1 + carouselImages.length) % carouselImages.length;
-            goToSlide(currentSlide);
-        }
-
-        // Set up event listeners
-        prevBtn.addEventListener('click', prevSlide);
-        nextBtn.addEventListener('click', nextSlide);
-
-        // Auto slide
-        let slideInterval = setInterval(nextSlide, 5000);
-
-        // Pause auto slide when hovering carousel
-        const carousel = document.querySelector('.carousel');
-        carousel.addEventListener('mouseenter', () => clearInterval(slideInterval));
-        carousel.addEventListener('mouseleave', () => {
-            slideInterval = setInterval(nextSlide, 5000);
-        });
-
-        // Initialize the carousel
-        initCarousel();
-
         // Scroll Animation
         const animateElements = document.querySelectorAll('.animate-on-scroll');
 
@@ -1180,7 +933,7 @@
             });
 
             // Special handling for section titles and subtitles
-            document.querySelectorAll('.section-title, .section-subtitle, .slogan').forEach(el => {
+            document.querySelectorAll('.section-title, .section-subtitle').forEach(el => {
                 if (el.getBoundingClientRect().top < window.innerHeight * 0.85) {
                     el.classList.add('visible');
                 }

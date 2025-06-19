@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Église des Assemblées de Dieu - Biétry, Temple La Grâce</title>
+    <title>Qui sommes-nous - Église des Assemblées de Dieu de Biétry</title>
     <style>
         /* Global Styles */
         :root {
@@ -15,6 +15,7 @@
             --dark-gray: #333333;
             --text-color: #222222;
             --light-blue: #E6F0FA;
+            --light-gold: rgba(212, 175, 55, 0.1);
         }
 
         * {
@@ -166,7 +167,7 @@
         }
 
         .logo img {
-            height: 100px;
+            height: 50px;
             margin-right: 15px;
             transition: transform 0.3s ease;
         }
@@ -368,76 +369,45 @@
             }
         }
 
-        /* Hero Slider Styles */
-        .hero-slider {
-            height: 100vh;
-            position: relative;
+        /* Main Content */
+        .main-content {
             margin-top: 80px;
-            overflow: hidden;
+            padding: 40px 0;
         }
 
-        .slider-container {
-            height: 100%;
-            position: relative;
-        }
-
-        .slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+        /* Hero Banner */
+        .hero-banner {
+            height: 500px;
+            background: linear-gradient(rgba(0, 64, 128, 0.8), rgba(0, 64, 128, 0.8)), 
+                         url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23004080"/><path d="M0 50 L100 50 M50 0 L50 100" stroke="%23D4AF37" stroke-width="2"/></svg>');
             background-size: cover;
             background-position: center;
-            background-repeat: no-repeat;
-            opacity: 0;
-            transition: opacity 1.2s cubic-bezier(0.25, 0.8, 0.25, 1);
-            will-change: opacity;
-        }
-
-        .slide.active {
-            opacity: 1;
-            z-index: 1;
-        }
-
-        .slide-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
             color: var(--white);
-            width: 80%;
+            position: relative;
+            margin-bottom: 60px;
+        }
+
+        .hero-content {
             max-width: 800px;
+            padding: 0 20px;
             z-index: 2;
-            opacity: 0;
-            transform: translate(-50%, -50%) scale(0.9);
-            transition: all 1s ease 0.3s;
         }
 
-        .slide.active .slide-content {
-            opacity: 1;
-            transform: translate(-50%, -50%) scale(1);
-        }
-
-        .slide-content h2 {
+        .hero-content h1 {
             font-size: 3.5rem;
             margin-bottom: 20px;
             color: var(--white);
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
             animation: fadeInUp 1s ease forwards;
         }
 
-        .slide-content p {
+        .hero-content p {
             font-size: 1.5rem;
             margin-bottom: 30px;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
             animation: fadeInUp 1s ease 0.2s forwards;
-            opacity: 0;
-        }
-
-        .slide-content .btn {
-            animation: fadeInUp 1s ease 0.4s forwards;
             opacity: 0;
         }
 
@@ -446,407 +416,337 @@
                 opacity: 0;
                 transform: translateY(20px);
             }
-
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
 
-        .slide::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, rgba(0, 64, 128, 0.4), rgba(0, 64, 128, 0.6));
-            z-index: 1;
-        }
-
-        .slider-controls {
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            z-index: 3;
-            transform: translateY(-50%);
-        }
-
-        .prev-slide,
-        .next-slide {
-            background-color: rgba(255, 255, 255, 0.3);
-            border: none;
-            color: var(--white);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin: 0 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            backdrop-filter: blur(2px);
-        }
-
-        .prev-slide:hover,
-        .next-slide:hover {
-            background-color: rgba(255, 255, 255, 0.5);
-            transform: scale(1.1);
-        }
-
-        .slider-dots {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            z-index: 3;
-            gap: 10px;
-        }
-
-        .dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.5);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .dot.active {
-            background-color: var(--white);
-            transform: scale(1.3);
-        }
-
-        /* Church Presentation Styles */
-        .church-presentation {
+        /* Histoire Section */
+        .history-section {
             padding: 80px 0;
             background-color: var(--white);
         }
 
-        .slogan {
-            font-size: 1.8rem;
-            text-align: center;
-            color: var(--secondary-color);
-            font-style: italic;
-            margin-bottom: 40px;
-            font-family: 'Playfair Display', serif;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.6s ease 0.4s;
+        .history-content {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
         }
 
-        .slogan.visible {
-            opacity: 1;
-            transform: translateY(0);
+        .history-text {
+            flex: 1;
         }
 
-        .presentation-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-            font-size: 1.1rem;
+        .history-text p {
+            margin-bottom: 20px;
             line-height: 1.8;
         }
 
-        .presentation-content p {
-            margin-bottom: 20px;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.6s ease;
-        }
-
-        .presentation-content p.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .presentation-content p:nth-child(1) {
-            transition-delay: 0.6s;
-        }
-
-        .presentation-content p:nth-child(2) {
-            transition-delay: 0.8s;
-        }
-
-        /* Pastors Section Styles */
-        .pastors-section {
-            padding: 80px 0;
-            background-color: var(--light-gray);
-        }
-
-        .main-pastor {
-            display: flex;
-            align-items: center;
-            margin-bottom: 60px;
-            background-color: var(--white);
+        .history-image {
+            flex: 1;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-     
-
-        .main-pastor.visible {
-            opacity: 1;
-            transform: translateY(0);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
 
-        .pastor-info {
-            flex: 1;
-            padding: 40px;
-        }
-
-        .pastor-info h3 {
-            font-size: 2rem;
-            margin-bottom: 15px;
-            margin-top: -90px;
-            color: var(--primary-color);
-        }
-
-        .pastor-info h4 {
-            font-size: 1.2rem;
-            color: var(--secondary-color);
-            margin-bottom: 50px;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .pastor-info p {
-            margin-bottom: 10px;
-            font-size: 1.1rem;
-        }
-
-        .pastor-image {
-            flex: 1;
-            overflow: hidden;
-        }
-
-        .pastor-image img {
+        .history-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.8s ease;
         }
 
-        .pastor-image:hover img {
+        .history-image:hover img {
             transform: scale(1.05);
         }
 
-        /* Other Pastors */
-        .other-pastors {
-            margin-top: 60px;
+        .timeline {
+            margin-top: 40px;
         }
 
-        .sub-section-title {
-            font-size: 1.8rem;
-            text-align: center;
-            margin-bottom: 40px;
-            color: var(--primary-color);
-            position: relative;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.6s ease;
-        }
-
-        .sub-section-title.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .sub-section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 2px;
-            background-color: var(--secondary-color);
-            transition: width 0.5s ease;
-        }
-
-        .sub-section-title:hover::after {
-            width: 100px;
-        }
-
-        .pastors-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-        }
-
-        .pastor-card {
-            background-color: var(--white);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-            text-align: center;
-            padding: 20px;
-            border: 1px solid rgba(212, 175, 55, 0.3);
+        .timeline-item {
+            display: flex;
+            margin-bottom: 30px;
             opacity: 0;
             transform: translateY(30px);
             transition: all 0.6s ease;
         }
 
-        .pastor-card.visible {
+        .timeline-item.visible {
             opacity: 1;
             transform: translateY(0);
         }
 
-        .pastor-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-            border-color: var(--secondary-color);
-        }
-
-        .pastor-card-image {
-            width: 200px;
-            height: 200px;
+        .timeline-date {
+            min-width: 100px;
+            height: 100px;
+            background-color: var(--secondary-color);
+            color: var(--white);
             border-radius: 50%;
-            overflow: hidden;
-            margin: 0 auto 20px;
-            border: 3px solid var(--secondary-color);
-            transition: all 0.3s ease;
-        }
-
-        .pastor-card:hover .pastor-card-image {
-            transform: scale(1.05);
-            border-color: var(--primary-color);
-        }
-
-        .pastor-card-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .pastor-card:hover .pastor-card-image img {
-            transform: scale(1.1);
-        }
-
-        .pastor-card h4 {
-            font-size: 1.3rem;
-            margin-bottom: 5px;
-            color: var(--primary-color);
-            transition: color 0.3s ease;
-        }
-
-        .pastor-card:hover h4 {
-            color: var(--secondary-color);
-        }
-
-        .pastor-card p {
-            color: var(--secondary-color);
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .pastor-card:hover p {
-            color: var(--primary-color);
-        }
-
-        /* Donations Section Styles */
-        .donations-section {
-            padding: 80px 0;
-            background-color: var(--white);
-            text-align: center;
-        }
-
-        .donation-text {
-            max-width: 700px;
-            margin: 0 auto 40px;
-            font-size: 1.1rem;
-        }
-
-        .payment-methods {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-
-        .payment-method {
-            background-color: var(--light-gray);
-            border-radius: 10px;
-            padding: 20px;
-            width: 180px;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(0, 64, 128, 0.1);
-        }
-
-        .payment-method:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            border-color: var(--primary-color);
-        }
-
-        .payment-icon {
-            width: 60px;
-            height: 60px;
-            margin: 0 auto 15px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: var(--white);
-            border-radius: 50%;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        .payment-icon img {
-            max-width: 80%;
-            max-height: 80%;
-        }
-
-        .payment-icon i {
-            font-size: 1.8rem;
-            color: var(--primary-color);
-        }
-
-        .payment-method p {
+            font-size: 1.2rem;
             font-weight: 600;
+            margin-right: 30px;
+            flex-shrink: 0;
+        }
+
+        .timeline-content {
+            background-color: var(--light-gray);
+            padding: 25px;
+            border-radius: 10px;
+            position: relative;
+            flex-grow: 1;
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: -15px;
+            width: 0;
+            height: 0;
+            border-top: 15px solid transparent;
+            border-bottom: 15px solid transparent;
+            border-right: 15px solid var(--light-gray);
+        }
+
+        .timeline-content h3 {
             margin-bottom: 10px;
             color: var(--primary-color);
         }
 
-        .payment-details {
-            font-size: 0.9rem;
-            color: var(--dark-gray);
-            display: block;
+        /* Mission Section */
+        .mission-section {
+            padding: 80px 0;
+            background-color: var(--light-gray);
         }
 
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
 
-        .donate-btn {
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 15px 40px;
-            font-size: 1.1rem;
-            border-radius: 30px;
-            border: none;
-            cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        .mission-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s ease;
             opacity: 0;
-            transform: translateY(20px);
+            transform: translateY(30px);
         }
 
-        .donate-btn.visible {
+        .mission-card.visible {
             opacity: 1;
             transform: translateY(0);
-            transition-delay: 0.4s;
         }
 
-        .donate-btn:hover {
-            background-color: #003366;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 64, 128, 0.3);
+        .mission-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .mission-icon {
+            width: 80px;
+            height: 80px;
+            background-color: var(--light-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: var(--secondary-color);
+            font-size: 2rem;
+            transition: all 0.4s ease;
+        }
+
+        .mission-card:hover .mission-icon {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            transform: scale(1.1);
+        }
+
+        .mission-card h3 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .bible-quote {
+            max-width: 800px;
+            margin: 60px auto 0;
+            padding: 30px;
+            background-color: var(--light-blue);
+            border-radius: 10px;
+            text-align: center;
+            position: relative;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .bible-quote.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .bible-quote::before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 5rem;
+            color: var(--secondary-color);
+            font-family: 'Playfair Display', serif;
+            opacity: 0.3;
+        }
+
+        .bible-quote p {
+            font-size: 1.4rem;
+            font-style: italic;
+            color: var(--primary-color);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .bible-quote .verse {
+            font-weight: 500;
+            color: var(--secondary-color);
+        }
+
+        /* Vision Section */
+        .vision-section {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .vision-content {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+            align-items: center;
+        }
+
+        .vision-text {
+            flex: 1;
+        }
+
+        .vision-text p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .vision-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .vision-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .vision-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .vision-list {
+            margin-top: 30px;
+        }
+
+        .vision-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .vision-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .vision-item i {
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            margin-right: 15px;
+            margin-top: 5px;
+            min-width: 30px;
+        }
+
+        .vision-item-content h3 {
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+
+        /* Values Section */
+        .values-section {
+            padding: 80px 0;
+            background-color: var(--light-gray);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .value-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.4s ease;
+            border-bottom: 4px solid var(--secondary-color);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .value-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .value-icon {
+            width: 70px;
+            height: 70px;
+            background-color: var(--light-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--secondary-color);
+            font-size: 1.8rem;
+            transition: all 0.4s ease;
+        }
+
+        .value-card:hover .value-icon {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            transform: scale(1.1);
+        }
+
+        .value-card h3 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
         }
 
         /* Footer Styles */
@@ -986,24 +886,17 @@
 
         /* Responsive Styles */
         @media (max-width: 992px) {
-            .pastors-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .main-pastor {
+            .history-content,
+            .vision-content {
                 flex-direction: column;
             }
-
-            .pastor-info,
-            .pastor-image {
-                flex: none;
+            
+            .history-image,
+            .vision-image {
                 width: 100%;
+                max-height: 400px;
             }
-
-            .pastor-image {
-                order: -1;
-            }
-
+            
             .footer-columns {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -1061,11 +954,11 @@
                 padding: 10px 30px;
             }
 
-            .slide-content h2 {
+            .hero-content h1 {
                 font-size: 2.5rem;
             }
 
-            .slide-content p {
+            .hero-content p {
                 font-size: 1.2rem;
             }
 
@@ -1083,25 +976,17 @@
                 font-size: 2rem;
             }
 
-            .slogan {
-                font-size: 1.5rem;
+            .timeline-item {
+                flex-direction: column;
+                align-items: flex-start;
             }
 
-            .pastors-grid {
-                grid-template-columns: 1fr;
+            .timeline-date {
+                margin-bottom: 15px;
             }
 
-            .payment-method {
-                width: 100%;
-                max-width: 250px;
-            }
-
-            .slide-content h2 {
-                font-size: 2rem;
-            }
-
-            .slide-content p {
-                font-size: 1rem;
+            .timeline-content::before {
+                display: none;
             }
         }
 
@@ -1118,9 +1003,7 @@
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -1141,8 +1024,8 @@
 
             <nav>
                 <ul class="nav-links">
-                    <li><a href="#" class="active">Accueil</a></li>
-                    <li><a href="qsn.html">Qui sommes-nous ?</a></li>
+                    <li><a href="ADBietry.html">Accueil</a></li>
+                    <li><a href="qsn.html" class="active">Qui sommes-nous ?</a></li>
                     <li><a href="actualites.html">Actualités</a></li>
                     <li class="dropdown">
                         <a href="#">Annexes <i class="fas fa-chevron-down"></i></a>
@@ -1153,182 +1036,203 @@
                             <li><a href="adebenezer.html">Église Ébènezer</a></li>
                         </ul>
                     </li>
-                    <li><a href="don.html">Faire un Don</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#">Témoignages</a></li>
+                    <li><a href="#">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Slider -->
-    <section class="hero-slider">
-        <div class="slider-container">
-            <div class="slide active" style="background-image: url('church1.jpg');">
-                <div class="slide-content">
-                    <h2>Une Église pour tous</h2>
-                    <p>Venez vivre une expérience spirituelle transformatrice</p>
-                    <a href="#" class="btn">En savoir plus</a>
-                </div>
-            </div>
-            <div class="slide" style="background-image: url('church2.jpg');">
-                <div class="slide-content">
-                    <h2>Un lieu de grâce et d'impact</h2>
-                    <p>Rejoignez notre communauté dynamique</p>
-                    <a href="#" class="btn">En savoir plus</a>
-                </div>
-            </div>
-             <div class="slide" style="background-image: url('church2.jpg');">
-                <div class="slide-content">
-                    <h2>Des musiques touchantes</h2>
-                    <p>Rejoignez notre communauté dynamique</p>
-                    <a href="#" class="btn">En savoir plus</a>
-                </div>
-            </div>
-            <div class="slide" style="background-image: url('church3.jpg');">
-                <div class="slide-content">
-                    <h2>Jeunesse active</h2>
-                    <p>Découvrez nos programmes pour les jeunes</p>
-                    <a href="#" class="btn">En savoir plus</a>
-                </div>
-            </div>
-            <div class="slider-controls">
-                <button class="prev-slide"><i class="fas fa-chevron-left"></i></button>
-                <button class="next-slide"><i class="fas fa-chevron-right"></i></button>
-            </div>
-            <div class="slider-dots"></div>
+    <!-- Hero Banner -->
+    <section class="hero-banner">
+        <div class="hero-content">
+            <h1>Qui sommes-nous ?</h1>
+            <p>Découvrez l'histoire, la mission et la vision de notre église</p>
         </div>
     </section>
 
-    <!-- Church Presentation -->
-    <section class="church-presentation">
-        <div class="container">
-            <h2 class="section-title animate-on-scroll">Église des Assemblées de Dieu de Côte d'Ivoire</h2>
-            <h3 class="section-subtitle animate-on-scroll">Biétry, Temple La Grâce</h3>
-            <p class="slogan animate-on-scroll">"Une église au cœur de la grâce"</p>
-            <div class="presentation-content">
-                <p class="animate-on-scroll">Fondée en 1995, l'Église des Assemblées de Dieu - Temple La Grâce à Biétry
-                    est une communauté
-                    chrétienne dynamique engagée dans l'évangélisation, la formation des disciples et l'impact social.
-                    Notre mission est d'apporter la Bonne Nouvelle de Jésus-Christ à toutes les couches de la société et
-                    de former des croyants matures dans la foi.</p>
-                <p class="animate-on-scroll">Nous croyons en la puissance transformatrice de l'Évangile et en l'action
-                    du Saint-Esprit dans la vie
-                    de chaque croyant. Notre église est ouverte à tous, quelle que soit votre origine, votre statut
-                    social ou votre parcours de vie.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pastors Section -->
-    <section class="pastors-section">
-        <div class="container">
-            <h2 class="section-title animate-on-scroll">Nos Pasteurs</h2>
-
-            <!-- Main Pastoral Couple -->
-            <div class="main-pastor animate-on-scroll">
-                <div class="pastor-info">
-                    <h3>Pasteurs Jean et Marie Dupont</h3 
-                        <h4>Pasteurs Principaux</h4>
-                    <p>Les Pasteurs Jean et Marie Dupont dirigent le Temple La Grâce depuis 2005. Après des études
-                        théologiques approfondies et plusieurs années de ministère dans différentes régions de la Côte
-                        d'Ivoire, ils ont été appelés par Dieu à fonder cette œuvre à Biétry.</p>
-                    <p>Leur vision est de voir une église unie, remplie de l'Esprit Saint, qui impacte positivement la
-                        société ivoirienne. Leur ministère est caractérisé par l'enseignement profond de la Parole de
-                        Dieu, la prière et un engagement sans faille pour le développement spirituel de chaque membre.</p>
-                    <p>"Nous croyons en une église qui vit la grâce au quotidien et qui transforme sa communauté par
-                        l'amour de Christ."</p>
-                </div>
-                <div class="pastor-image">
-                    <img src="pastor-main.jpg" alt="Pasteurs Jean et Marie Dupont">
-                </div>
-            </div>
-
-            <!-- Other Pastors -->
-            <div class="other-pastors">
-                <h3 class="sub-section-title animate-on-scroll">Notre Équipe Pastorale</h3>
-                <div class="pastors-grid">
-                    <div class="pastor-card animate-on-scroll">
-                        <div class="pastor-card-image">
-                            <img src="pastor1.jpg" alt="Pasteur Samuel Kouassi">
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Histoire Section -->
+        <section class="history-section">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Notre Histoire</h2>
+                <p class="section-subtitle animate-on-scroll">Un héritage de foi et de grâce depuis 1995</p>
+                
+                <div class="history-content">
+                    <div class="history-text">
+                        <p>Fondé en 1995, le Temple La Grâce de Biétry est né d'une vision divine accordée à un groupe de croyants dévoués. Dans un modeste bâtiment prêté par la communauté locale, les premiers cultes ont rassemblé une cinquantaine de fidèles assoiffés de la Parole de Dieu.</p>
+                        <p>À travers les années, notre église a connu une croissance remarquable, tant spirituelle que numérique. En 2005, nous avons inauguré notre propre lieu de culte, construit grâce à la générosité et au travail acharné des membres de notre communauté.</p>
+                        <p>Aujourd'hui, l'Église des Assemblées de Dieu - Temple La Grâce de Biétry est une communauté florissante de plus de 2000 membres, engagée à servir Dieu et à transformer sa communauté par l'amour du Christ.</p>
+                        
+                        <div class="timeline">
+                            <div class="timeline-item animate-on-scroll">
+                                <div class="timeline-date">1995</div>
+                                <div class="timeline-content">
+                                    <h3>Fondation de l'Église</h3>
+                                    <p>Premier culte tenu dans un local prêté avec 52 fidèles présents.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item animate-on-scroll">
+                                <div class="timeline-date">2000</div>
+                                <div class="timeline-content">
+                                    <h3>Première annexe</h3>
+                                    <p>Ouverture de notre première annexe dans le quartier de Marcory.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item animate-on-scroll">
+                                <div class="timeline-date">2005</div>
+                                <div class="timeline-content">
+                                    <h3>Inauguration du temple actuel</h3>
+                                    <p>Bénédiction et ouverture du bâtiment actuel pouvant accueillir 800 personnes.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item animate-on-scroll">
+                                <div class="timeline-date">2020</div>
+                                <div class="timeline-content">
+                                    <h3>Projet d'extension</h3>
+                                    <p>Lancement des travaux d'agrandissement pour accueillir 1500 fidèles.</p>
+                                </div>
+                            </div>
                         </div>
-                        <h4>Samuel Kouassi</h4>
-                        <p>Pasteur des Jeunes</p>
                     </div>
-                    <div class="pastor-card animate-on-scroll">
-                        <div class="pastor-card-image">
-                            <img src="pastor2.jpg" alt="Pasteur David Yao">
-                        </div>
-                        <h4>David Yao</h4>
-                        <p>Pasteur d'Enseignement</p>
-                    </div>
-                    <div class="pastor-card animate-on-scroll">
-                        <div class="pastor-card-image">
-                            <img src="pastor3.jpg" alt="Pasteur Ruth N'Guessan">
-                        </div>
-                        <h4>Ruth N'Guessan</h4>
-                        <p>Pasteure des Femmes</p>
-                    </div>
-                    <div class="pastor-card animate-on-scroll">
-                        <div class="pastor-card-image">
-                            <img src="pastor4.jpg" alt="Pasteur Michel Koné">
-                        </div>
-                        <h4>Michel Koné</h4>
-                        <p>Pasteur d'Adoration</p>
+                    
+                    <div class="history-image">
+                        <img src="https://i.postimg.cc/ZKtmJgmG/implantation-EEADCI.jpg" alt="Notre église historique">
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Donations Section -->
-    <section class="donations-section">
-        <div class="container">
-            <h2 class="section-title">Soutenez l'œuvre de Dieu</h2>
-            <p class="donation-text">Vos dons, dîmes et offrandes contribuent à l'avancement du Royaume de Dieu et au
-                développement des activités de notre église. Chaque contribution est précieuse et utilisée avec sagesse
-                pour la gloire de Dieu.</p>
-
-            <div class="payment-methods">
-                <div class="payment-method">
-                    <div class="payment-icon">
-                        <img src="wave.png" alt="Wave">
+        </section>
+        
+        <!-- Mission Section -->
+        <section class="mission-section">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Notre Mission</h2>
+                <p class="section-subtitle animate-on-scroll">Apporter la grâce de Dieu à chaque personne</p>
+                
+                <div class="mission-grid">
+                    <div class="mission-card animate-on-scroll">
+                        <div class="mission-icon">
+                            <i class="fas fa-cross"></i>
+                        </div>
+                        <h3>Proclamer l'Évangile</h3>
+                        <p>Annoncer la Bonne Nouvelle de Jésus-Christ avec puissance et pertinence à toutes les générations et à tous les peuples.</p>
                     </div>
-                    <p>Wave</p>
-                    <span class="payment-details">05 07 08 09 10</span>
+                    
+                    <div class="mission-card animate-on-scroll">
+                        <div class="mission-icon">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <h3>Servir la Communauté</h3>
+                        <p>Manifester l'amour de Christ par des actions concrètes envers les nécessiteux et les marginalisés.</p>
+                    </div>
+                    
+                    <div class="mission-card animate-on-scroll">
+                        <div class="mission-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Former des Disciples</h3>
+                        <p>Équiper chaque croyant pour vivre une vie chrétienne authentique et exercer son ministère.</p>
+                    </div>
                 </div>
-                <div class="payment-method">
-                    <div class="payment-icon">
-                        <img src="mtn.png" alt="MTN Mobile Money">
-                    </div>
-                    <p>MTN Mobile Money</p>
-                    <span class="payment-details">05 07 08 09 10</span>
-                </div>
-                <div class="payment-method">
-                    <div class="payment-icon">
-                        <img src="orange.png" alt="Orange Money">
-                    </div>
-                    <p>Orange Money</p>
-                    <span class="payment-details">05 07 08 09 10</span>
-                </div>
-                <div class="payment-method">
-                    <div class="payment-icon">
-                        <img src="moov.png" alt="Moov Money">
-                    </div>
-                    <p>Moov Money</p>
-                    <span class="payment-details">05 07 08 09 10</span>
-                </div>
-                <div class="payment-method">
-                    <div class="payment-icon">
-                        <i class="fas fa-university"></i>
-                    </div>
-                    <p>Virement Bancaire</p>
-                    <span class="payment-details">Banque: BICICI<br>IBAN: CI123456789<br>Code SWIFT: BICICIAXXX</span>
+                
+                <div class="bible-quote animate-on-scroll">
+                    <p>"Allez, faites de toutes les nations des disciples, les baptisant au nom du Père, du Fils et du Saint-Esprit"</p>
+                    <div class="verse">Matthieu 28:19</div>
                 </div>
             </div>
-
-            <a href="don.html"><button class="btn donate-btn animate-on-scroll">Faire un don en ligne</button></a>
-        </div>
-    </section>
+        </section>
+        
+        <!-- Vision Section -->
+        <section class="vision-section">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Notre Vision</h2>
+                <p class="section-subtitle animate-on-scroll">Construire une église transformatrice</p>
+                
+                <div class="vision-content">
+                    <div class="vision-image">
+                        <img src="https://i.postimg.cc/NfgXCdVc/Vision-Eglise.jpg width='600' height='400' viewBox='0 0 600 400" alt="Notre vision d'avenir">
+                    </div>
+                    
+                    <div class="vision-text">
+                        <p>Notre vision est de voir une église unie, remplie de l'Esprit Saint, qui impacte positivement la société ivoirienne. Nous aspirons à être une communauté où chaque personne découvre son identité en Christ et vit pleinement sa destinée divine.</p>
+                        <p>Pour les années à venir, nous nous engageons à développer des programmes innovants pour les jeunes, élargir notre action sociale dans les quartiers défavorisés, et créer des espaces de formation théologique accessibles à tous.</p>
+                        
+                        <div class="vision-list">
+                            <div class="vision-item animate-on-scroll">
+                                <i class="fas fa-church"></i>
+                                <div class="vision-item-content">
+                                    <h3>Un lieu de refuge</h3>
+                                    <p>Créer un espace où chacun trouve accueil, écoute et soutien spirituel.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="vision-item animate-on-scroll">
+                                <i class="fas fa-seedling"></i>
+                                <div class="vision-item-content">
+                                    <h3>Croissance spirituelle</h3>
+                                    <p>Développer des disciples matures, enracinés dans la Parole et la prière.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="vision-item animate-on-scroll">
+                                <i class="fas fa-hands"></i>
+                                <div class="vision-item-content">
+                                    <h3>Impact communautaire</h3>
+                                    <p>Transformer notre société par des actions d'amour et de justice.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Valeurs Section -->
+        <section class="values-section">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Nos Valeurs Fondamentales</h2>
+                <p class="section-subtitle animate-on-scroll">Les principes qui guident notre communauté</p>
+                
+                <div class="values-grid">
+                    <div class="value-card animate-on-scroll">
+                        <div class="value-icon">
+                            <i class="fas fa-bible"></i>
+                        </div>
+                        <h3>Autorité des Écritures</h3>
+                        <p>La Bible est notre fondement absolu et notre guide suprême pour la foi et la pratique.</p>
+                    </div>
+                    
+                    <div class="value-card animate-on-scroll">
+                        <div class="value-icon">
+                            <i class="fas fa-pray"></i>
+                        </div>
+                        <h3>Prière</h3>
+                        <p>La communion avec Dieu par la prière est au cœur de notre vie communautaire.</p>
+                    </div>
+                    
+                    <div class="value-card animate-on-scroll">
+                        <div class="value-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Amour fraternel</h3>
+                        <p>Nous cultivons des relations authentiques empreintes de grâce, de pardon et de service.</p>
+                    </div>
+                    
+                    <div class="value-card animate-on-scroll">
+                        <div class="value-icon">
+                            <i class="fas fa-hand-holding-heart"></i>
+                        </div>
+                        <h3>Intégrité</h3>
+                        <p>Nous vivons dans la transparence et l'honnêteté devant Dieu et devant les hommes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer>
@@ -1406,55 +1310,6 @@
             }
         });
 
-        // Hero Slider
-        const slides = document.querySelectorAll('.slide');
-        const dotsContainer = document.querySelector('.slider-dots');
-        const prevBtn = document.querySelector('.prev-slide');
-        const nextBtn = document.querySelector('.next-slide');
-        let currentSlide = 0;
-
-        // Create dots
-        slides.forEach((_, i) => {
-            const dot = document.createElement('div');
-            dot.classList.add('dot');
-            if (i === 0) dot.classList.add('active');
-            dot.addEventListener('click', () => goToSlide(i));
-            dotsContainer.appendChild(dot);
-        });
-
-        const dots = document.querySelectorAll('.dot');
-
-        function goToSlide(index) {
-            slides[currentSlide].classList.remove('active');
-            dots[currentSlide].classList.remove('active');
-
-            currentSlide = (index + slides.length) % slides.length;
-
-            slides[currentSlide].classList.add('active');
-            dots[currentSlide].classList.add('active');
-        }
-
-        function nextSlide() {
-            goToSlide(currentSlide + 1);
-        }
-
-        function prevSlide() {
-            goToSlide(currentSlide - 1);
-        }
-
-        nextBtn.addEventListener('click', nextSlide);
-        prevBtn.addEventListener('click', prevSlide);
-
-        // Auto slide
-        let slideInterval = setInterval(nextSlide, 5000);
-
-        // Pause auto slide when hovering slider
-        const sliderContainer = document.querySelector('.slider-container');
-        sliderContainer.addEventListener('mouseenter', () => clearInterval(slideInterval));
-        sliderContainer.addEventListener('mouseleave', () => {
-            slideInterval = setInterval(nextSlide, 5000);
-        });
-
         // Scroll Animation
         const animateElements = document.querySelectorAll('.animate-on-scroll');
 
@@ -1469,7 +1324,7 @@
             });
 
             // Special handling for section titles and subtitles
-            document.querySelectorAll('.section-title, .section-subtitle, .slogan').forEach(el => {
+            document.querySelectorAll('.section-title, .section-subtitle').forEach(el => {
                 if (el.getBoundingClientRect().top < window.innerHeight * 0.85) {
                     el.classList.add('visible');
                 }
