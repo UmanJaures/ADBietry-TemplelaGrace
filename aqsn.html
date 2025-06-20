@@ -5,6 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Qui sommes-nous - Église des Assemblées de Dieu de Biétry</title>
+    <!-- Favicon standard -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <!-- Android/Chrome -->
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Apple Touch Icon (iOS) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
     <style>
         /* Global Styles */
         :root {
@@ -167,7 +178,7 @@
         }
 
         .logo img {
-            height: 50px;
+            height: 100px;
             margin-right: 15px;
             transition: transform 0.3s ease;
         }
@@ -378,8 +389,8 @@
         /* Hero Banner */
         .hero-banner {
             height: 500px;
-            background: linear-gradient(rgba(0, 64, 128, 0.8), rgba(0, 64, 128, 0.8)), 
-                         url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23004080"/><path d="M0 50 L100 50 M50 0 L50 100" stroke="%23D4AF37" stroke-width="2"/></svg>');
+            background: linear-gradient(rgba(0, 64, 128, 0.8), rgba(0, 64, 128, 0.8)),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23004080"/><path d="M0 50 L100 50 M50 0 L50 100" stroke="%23D4AF37" stroke-width="2"/></svg>');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -416,6 +427,7 @@
                 opacity: 0;
                 transform: translateY(20px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -886,17 +898,18 @@
 
         /* Responsive Styles */
         @media (max-width: 992px) {
+
             .history-content,
             .vision-content {
                 flex-direction: column;
             }
-            
+
             .history-image,
             .vision-image {
                 width: 100%;
                 max-height: 400px;
             }
-            
+
             .footer-columns {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -1003,7 +1016,9 @@
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -1011,7 +1026,7 @@
     <header>
         <div class="header-container">
             <div class="logo">
-                <img src="logo.jpg" alt="Logo Assemblées de Dieu Côte d'Ivoire">
+                <img src="https://i.postimg.cc/MTQyg2LT/logo.png" alt="Logo Assemblées de Dieu Côte d'Ivoire">
                 <div class="church-name">
                     <h1>Assemblées de Dieu</h1>
                     <p>Temple La Grâce - Biétry</p>
@@ -1024,8 +1039,8 @@
 
             <nav>
                 <ul class="nav-links">
-                    <li><a href="ADBietry.html">Accueil</a></li>
-                    <li><a href="qsn.html" class="active">Qui sommes-nous ?</a></li>
+                    <li><a href="adaccueil.html">Accueil</a></li>
+                    <li><a href="aqsn.html" class="active">Qui sommes-nous ?</a></li>
                     <li><a href="actualites.html">Actualités</a></li>
                     <li class="dropdown">
                         <a href="#">Annexes <i class="fas fa-chevron-down"></i></a>
@@ -1036,8 +1051,8 @@
                             <li><a href="adebenezer.html">Église Ébènezer</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Témoignages</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="adon.html">Faire un Don</a></li>
+                    <li><a href="acontact.html">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -1058,13 +1073,19 @@
             <div class="container">
                 <h2 class="section-title animate-on-scroll">Notre Histoire</h2>
                 <p class="section-subtitle animate-on-scroll">Un héritage de foi et de grâce depuis 1995</p>
-                
+
                 <div class="history-content">
                     <div class="history-text">
-                        <p>Fondé en 1995, le Temple La Grâce de Biétry est né d'une vision divine accordée à un groupe de croyants dévoués. Dans un modeste bâtiment prêté par la communauté locale, les premiers cultes ont rassemblé une cinquantaine de fidèles assoiffés de la Parole de Dieu.</p>
-                        <p>À travers les années, notre église a connu une croissance remarquable, tant spirituelle que numérique. En 2005, nous avons inauguré notre propre lieu de culte, construit grâce à la générosité et au travail acharné des membres de notre communauté.</p>
-                        <p>Aujourd'hui, l'Église des Assemblées de Dieu - Temple La Grâce de Biétry est une communauté florissante de plus de 2000 membres, engagée à servir Dieu et à transformer sa communauté par l'amour du Christ.</p>
-                        
+                        <p>Fondé en 1995, le Temple La Grâce de Biétry est né d'une vision divine accordée à un groupe
+                            de croyants dévoués. Dans un modeste bâtiment prêté par la communauté locale, les premiers
+                            cultes ont rassemblé une cinquantaine de fidèles assoiffés de la Parole de Dieu.</p>
+                        <p>À travers les années, notre église a connu une croissance remarquable, tant spirituelle que
+                            numérique. En 2005, nous avons inauguré notre propre lieu de culte, construit grâce à la
+                            générosité et au travail acharné des membres de notre communauté.</p>
+                        <p>Aujourd'hui, l'Église des Assemblées de Dieu - Temple La Grâce de Biétry est une communauté
+                            florissante de plus de 2000 membres, engagée à servir Dieu et à transformer sa communauté
+                            par l'amour du Christ.</p>
+
                         <div class="timeline">
                             <div class="timeline-item animate-on-scroll">
                                 <div class="timeline-date">1995</div>
@@ -1073,7 +1094,7 @@
                                     <p>Premier culte tenu dans un local prêté avec 52 fidèles présents.</p>
                                 </div>
                             </div>
-                            
+
                             <div class="timeline-item animate-on-scroll">
                                 <div class="timeline-date">2000</div>
                                 <div class="timeline-content">
@@ -1081,7 +1102,7 @@
                                     <p>Ouverture de notre première annexe dans le quartier de Marcory.</p>
                                 </div>
                             </div>
-                            
+
                             <div class="timeline-item animate-on-scroll">
                                 <div class="timeline-date">2005</div>
                                 <div class="timeline-content">
@@ -1089,7 +1110,7 @@
                                     <p>Bénédiction et ouverture du bâtiment actuel pouvant accueillir 800 personnes.</p>
                                 </div>
                             </div>
-                            
+
                             <div class="timeline-item animate-on-scroll">
                                 <div class="timeline-date">2020</div>
                                 <div class="timeline-content">
@@ -1099,68 +1120,77 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="history-image">
                         <img src="https://i.postimg.cc/ZKtmJgmG/implantation-EEADCI.jpg" alt="Notre église historique">
                     </div>
                 </div>
             </div>
         </section>
-        
+
         <!-- Mission Section -->
         <section class="mission-section">
             <div class="container">
                 <h2 class="section-title animate-on-scroll">Notre Mission</h2>
                 <p class="section-subtitle animate-on-scroll">Apporter la grâce de Dieu à chaque personne</p>
-                
+
                 <div class="mission-grid">
                     <div class="mission-card animate-on-scroll">
                         <div class="mission-icon">
                             <i class="fas fa-cross"></i>
                         </div>
                         <h3>Proclamer l'Évangile</h3>
-                        <p>Annoncer la Bonne Nouvelle de Jésus-Christ avec puissance et pertinence à toutes les générations et à tous les peuples.</p>
+                        <p>Annoncer la Bonne Nouvelle de Jésus-Christ avec puissance et pertinence à toutes les
+                            générations et à tous les peuples.</p>
                     </div>
-                    
+
                     <div class="mission-card animate-on-scroll">
                         <div class="mission-icon">
                             <i class="fas fa-hands-helping"></i>
                         </div>
                         <h3>Servir la Communauté</h3>
-                        <p>Manifester l'amour de Christ par des actions concrètes envers les nécessiteux et les marginalisés.</p>
+                        <p>Manifester l'amour de Christ par des actions concrètes envers les nécessiteux et les
+                            marginalisés.</p>
                     </div>
-                    
+
                     <div class="mission-card animate-on-scroll">
                         <div class="mission-icon">
                             <i class="fas fa-users"></i>
                         </div>
                         <h3>Former des Disciples</h3>
-                        <p>Équiper chaque croyant pour vivre une vie chrétienne authentique et exercer son ministère.</p>
+                        <p>Équiper chaque croyant pour vivre une vie chrétienne authentique et exercer son ministère.
+                        </p>
                     </div>
                 </div>
-                
+
                 <div class="bible-quote animate-on-scroll">
-                    <p>"Allez, faites de toutes les nations des disciples, les baptisant au nom du Père, du Fils et du Saint-Esprit"</p>
+                    <p>"Allez, faites de toutes les nations des disciples, les baptisant au nom du Père, du Fils et du
+                        Saint-Esprit"</p>
                     <div class="verse">Matthieu 28:19</div>
                 </div>
             </div>
         </section>
-        
+
         <!-- Vision Section -->
         <section class="vision-section">
             <div class="container">
                 <h2 class="section-title animate-on-scroll">Notre Vision</h2>
                 <p class="section-subtitle animate-on-scroll">Construire une église transformatrice</p>
-                
+
                 <div class="vision-content">
                     <div class="vision-image">
-                        <img src="https://i.postimg.cc/NfgXCdVc/Vision-Eglise.jpg width='600' height='400' viewBox='0 0 600 400" alt="Notre vision d'avenir">
+                        <img src="https://i.postimg.cc/NfgXCdVc/Vision-Eglise.jpg width='600' height='400' viewBox='0 0 600 400"
+                            alt="Notre vision d'avenir">
                     </div>
-                    
+
                     <div class="vision-text">
-                        <p>Notre vision est de voir une église unie, remplie de l'Esprit Saint, qui impacte positivement la société ivoirienne. Nous aspirons à être une communauté où chaque personne découvre son identité en Christ et vit pleinement sa destinée divine.</p>
-                        <p>Pour les années à venir, nous nous engageons à développer des programmes innovants pour les jeunes, élargir notre action sociale dans les quartiers défavorisés, et créer des espaces de formation théologique accessibles à tous.</p>
-                        
+                        <p>Notre vision est de voir une église unie, remplie de l'Esprit Saint, qui impacte positivement
+                            la société ivoirienne. Nous aspirons à être une communauté où chaque personne découvre son
+                            identité en Christ et vit pleinement sa destinée divine.</p>
+                        <p>Pour les années à venir, nous nous engageons à développer des programmes innovants pour les
+                            jeunes, élargir notre action sociale dans les quartiers défavorisés, et créer des espaces de
+                            formation théologique accessibles à tous.</p>
+
                         <div class="vision-list">
                             <div class="vision-item animate-on-scroll">
                                 <i class="fas fa-church"></i>
@@ -1169,7 +1199,7 @@
                                     <p>Créer un espace où chacun trouve accueil, écoute et soutien spirituel.</p>
                                 </div>
                             </div>
-                            
+
                             <div class="vision-item animate-on-scroll">
                                 <i class="fas fa-seedling"></i>
                                 <div class="vision-item-content">
@@ -1177,7 +1207,7 @@
                                     <p>Développer des disciples matures, enracinés dans la Parole et la prière.</p>
                                 </div>
                             </div>
-                            
+
                             <div class="vision-item animate-on-scroll">
                                 <i class="fas fa-hands"></i>
                                 <div class="vision-item-content">
@@ -1190,13 +1220,13 @@
                 </div>
             </div>
         </section>
-        
+
         <!-- Valeurs Section -->
         <section class="values-section">
             <div class="container">
                 <h2 class="section-title animate-on-scroll">Nos Valeurs Fondamentales</h2>
                 <p class="section-subtitle animate-on-scroll">Les principes qui guident notre communauté</p>
-                
+
                 <div class="values-grid">
                     <div class="value-card animate-on-scroll">
                         <div class="value-icon">
@@ -1205,7 +1235,7 @@
                         <h3>Autorité des Écritures</h3>
                         <p>La Bible est notre fondement absolu et notre guide suprême pour la foi et la pratique.</p>
                     </div>
-                    
+
                     <div class="value-card animate-on-scroll">
                         <div class="value-icon">
                             <i class="fas fa-pray"></i>
@@ -1213,7 +1243,7 @@
                         <h3>Prière</h3>
                         <p>La communion avec Dieu par la prière est au cœur de notre vie communautaire.</p>
                     </div>
-                    
+
                     <div class="value-card animate-on-scroll">
                         <div class="value-icon">
                             <i class="fas fa-heart"></i>
@@ -1221,7 +1251,7 @@
                         <h3>Amour fraternel</h3>
                         <p>Nous cultivons des relations authentiques empreintes de grâce, de pardon et de service.</p>
                     </div>
-                    
+
                     <div class="value-card animate-on-scroll">
                         <div class="value-icon">
                             <i class="fas fa-hand-holding-heart"></i>

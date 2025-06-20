@@ -5,6 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Église des Assemblées de Dieu - Biétry, Temple La Grâce</title>
+    <!-- Favicon standard -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <!-- Android/Chrome -->
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Apple Touch Icon (iOS) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
     <style>
         /* Global Styles */
         :root {
@@ -591,7 +602,7 @@
             transform: translateY(30px);
             transition: all 0.8s ease;
         }
-     
+
 
         .main-pastor.visible {
             opacity: 1;
@@ -604,9 +615,9 @@
         }
 
         .pastor-info h3 {
-            font-size: 2rem;
+            font-size: 1.8rem;
             margin-bottom: 15px;
-            margin-top: -90px;
+            margin-top: -20px;
             color: var(--primary-color);
         }
 
@@ -1128,7 +1139,7 @@
     <header>
         <div class="header-container">
             <div class="logo">
-                <img src="logo.jpg" alt="Logo Assemblées de Dieu Côte d'Ivoire">
+                <img src="https://i.postimg.cc/MTQyg2LT/logo.png" alt="Logo Assemblées de Dieu Côte d'Ivoire">
                 <div class="church-name">
                     <h1>Assemblées de Dieu</h1>
                     <p>Temple La Grâce - Biétry</p>
@@ -1141,8 +1152,8 @@
 
             <nav>
                 <ul class="nav-links">
-                    <li><a href="#" class="active">Accueil</a></li>
-                    <li><a href="qsn.html">Qui sommes-nous ?</a></li>
+                    <li><a href="adaccueil.html" class="active">Accueil</a></li>
+                    <li><a href="aqsn.html">Qui sommes-nous ?</a></li>
                     <li><a href="actualites.html">Actualités</a></li>
                     <li class="dropdown">
                         <a href="#">Annexes <i class="fas fa-chevron-down"></i></a>
@@ -1153,44 +1164,17 @@
                             <li><a href="adebenezer.html">Église Ébènezer</a></li>
                         </ul>
                     </li>
-                    <li><a href="don.html">Faire un Don</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="adon.html">Faire un Don</a></li>
+                    <li><a href="acontact.html">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Slider -->
+    <!-- Hero Slider (contenu géré par JavaScript) -->
     <section class="hero-slider">
-        <div class="slider-container">
-            <div class="slide active" style="background-image: url('church1.jpg');">
-                <div class="slide-content">
-                    <h2>Une Église pour tous</h2>
-                    <p>Venez vivre une expérience spirituelle transformatrice</p>
-                    <a href="#" class="btn">En savoir plus</a>
-                </div>
-            </div>
-            <div class="slide" style="background-image: url('church2.jpg');">
-                <div class="slide-content">
-                    <h2>Un lieu de grâce et d'impact</h2>
-                    <p>Rejoignez notre communauté dynamique</p>
-                    <a href="#" class="btn">En savoir plus</a>
-                </div>
-            </div>
-             <div class="slide" style="background-image: url('church2.jpg');">
-                <div class="slide-content">
-                    <h2>Des musiques touchantes</h2>
-                    <p>Rejoignez notre communauté dynamique</p>
-                    <a href="#" class="btn">En savoir plus</a>
-                </div>
-            </div>
-            <div class="slide" style="background-image: url('church3.jpg');">
-                <div class="slide-content">
-                    <h2>Jeunesse active</h2>
-                    <p>Découvrez nos programmes pour les jeunes</p>
-                    <a href="#" class="btn">En savoir plus</a>
-                </div>
-            </div>
+        <div class="slider-container" id="slider-container">
+            <!-- Les slides seront générés dynamiquement par JavaScript -->
             <div class="slider-controls">
                 <button class="prev-slide"><i class="fas fa-chevron-left"></i></button>
                 <button class="next-slide"><i class="fas fa-chevron-right"></i></button>
@@ -1219,66 +1203,26 @@
         </div>
     </section>
 
-    <!-- Pastors Section -->
+    <!-- Pastors Section (contenu géré par JavaScript) -->
     <section class="pastors-section">
         <div class="container">
             <h2 class="section-title animate-on-scroll">Nos Pasteurs</h2>
 
-            <!-- Main Pastoral Couple -->
-            <div class="main-pastor animate-on-scroll">
-                <div class="pastor-info">
-                    <h3>Pasteurs Jean et Marie Dupont</h3 
-                        <h4>Pasteurs Principaux</h4>
-                    <p>Les Pasteurs Jean et Marie Dupont dirigent le Temple La Grâce depuis 2005. Après des études
-                        théologiques approfondies et plusieurs années de ministère dans différentes régions de la Côte
-                        d'Ivoire, ils ont été appelés par Dieu à fonder cette œuvre à Biétry.</p>
-                    <p>Leur vision est de voir une église unie, remplie de l'Esprit Saint, qui impacte positivement la
-                        société ivoirienne. Leur ministère est caractérisé par l'enseignement profond de la Parole de
-                        Dieu, la prière et un engagement sans faille pour le développement spirituel de chaque membre.</p>
-                    <p>"Nous croyons en une église qui vit la grâce au quotidien et qui transforme sa communauté par
-                        l'amour de Christ."</p>
-                </div>
-                <div class="pastor-image">
-                    <img src="pastor-main.jpg" alt="Pasteurs Jean et Marie Dupont">
-                </div>
+            <!-- Main Pastoral Couple (généré par JS) -->
+            <div class="main-pastor animate-on-scroll" id="main-pastor-container">
+                <!-- Contenu généré par JavaScript -->
             </div>
 
-            <!-- Other Pastors -->
+            <!-- Other Pastors (généré par JS) -->
             <div class="other-pastors">
                 <h3 class="sub-section-title animate-on-scroll">Notre Équipe Pastorale</h3>
-                <div class="pastors-grid">
-                    <div class="pastor-card animate-on-scroll">
-                        <div class="pastor-card-image">
-                            <img src="pastor1.jpg" alt="Pasteur Samuel Kouassi">
-                        </div>
-                        <h4>Samuel Kouassi</h4>
-                        <p>Pasteur des Jeunes</p>
-                    </div>
-                    <div class="pastor-card animate-on-scroll">
-                        <div class="pastor-card-image">
-                            <img src="pastor2.jpg" alt="Pasteur David Yao">
-                        </div>
-                        <h4>David Yao</h4>
-                        <p>Pasteur d'Enseignement</p>
-                    </div>
-                    <div class="pastor-card animate-on-scroll">
-                        <div class="pastor-card-image">
-                            <img src="pastor3.jpg" alt="Pasteur Ruth N'Guessan">
-                        </div>
-                        <h4>Ruth N'Guessan</h4>
-                        <p>Pasteure des Femmes</p>
-                    </div>
-                    <div class="pastor-card animate-on-scroll">
-                        <div class="pastor-card-image">
-                            <img src="pastor4.jpg" alt="Pasteur Michel Koné">
-                        </div>
-                        <h4>Michel Koné</h4>
-                        <p>Pasteur d'Adoration</p>
-                    </div>
+                <div class="pastors-grid" id="pastors-grid-container">
+                    <!-- Contenu généré par JavaScript -->
                 </div>
             </div>
         </div>
     </section>
+
 
     <!-- Donations Section -->
     <section class="donations-section">
@@ -1291,28 +1235,28 @@
             <div class="payment-methods">
                 <div class="payment-method">
                     <div class="payment-icon">
-                        <img src="wave.png" alt="Wave">
+                        <img src="https://i.postimg.cc/28Zn6Dj7/wave.png" alt="Wave">
                     </div>
                     <p>Wave</p>
                     <span class="payment-details">05 07 08 09 10</span>
                 </div>
                 <div class="payment-method">
                     <div class="payment-icon">
-                        <img src="mtn.png" alt="MTN Mobile Money">
+                        <img src="https://i.postimg.cc/prn5pfvL/mtn.jpg" alt="MTN Mobile Money">
                     </div>
                     <p>MTN Mobile Money</p>
                     <span class="payment-details">05 07 08 09 10</span>
                 </div>
                 <div class="payment-method">
                     <div class="payment-icon">
-                        <img src="orange.png" alt="Orange Money">
+                        <img src="https://i.postimg.cc/pTL6bTHZ/orange.png" alt="Orange Money">
                     </div>
                     <p>Orange Money</p>
                     <span class="payment-details">05 07 08 09 10</span>
                 </div>
                 <div class="payment-method">
                     <div class="payment-icon">
-                        <img src="moov.png" alt="Moov Money">
+                        <img src="https://i.postimg.cc/SsPVBfVS/moov.png" alt="Moov Money">
                     </div>
                     <p>Moov Money</p>
                     <span class="payment-details">05 07 08 09 10</span>
@@ -1326,7 +1270,7 @@
                 </div>
             </div>
 
-            <a href="don.html"><button class="btn donate-btn animate-on-scroll">Faire un don en ligne</button></a>
+            <a href="adon.html"><button class="btn donate-btn animate-on-scroll">Faire un don en ligne</button></a>
         </div>
     </section>
 
@@ -1373,112 +1317,7 @@
         </div>
     </footer>
 
-    <script>
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const navLinks = document.querySelector('.nav-links');
-        const dropdowns = document.querySelectorAll('.dropdown');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            mobileMenuBtn.querySelector('i').classList.toggle('fa-bars');
-            mobileMenuBtn.querySelector('i').classList.toggle('fa-times');
-        });
-
-        dropdowns.forEach(dropdown => {
-            dropdown.addEventListener('click', (e) => {
-                if (window.innerWidth <= 992) {
-                    e.preventDefault();
-                    dropdown.classList.toggle('open');
-                    const dropdownMenu = dropdown.querySelector('.dropdown-menu');
-                    dropdownMenu.classList.toggle('active');
-                }
-            });
-        });
-
-        // Header Scroll Effect
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        // Hero Slider
-        const slides = document.querySelectorAll('.slide');
-        const dotsContainer = document.querySelector('.slider-dots');
-        const prevBtn = document.querySelector('.prev-slide');
-        const nextBtn = document.querySelector('.next-slide');
-        let currentSlide = 0;
-
-        // Create dots
-        slides.forEach((_, i) => {
-            const dot = document.createElement('div');
-            dot.classList.add('dot');
-            if (i === 0) dot.classList.add('active');
-            dot.addEventListener('click', () => goToSlide(i));
-            dotsContainer.appendChild(dot);
-        });
-
-        const dots = document.querySelectorAll('.dot');
-
-        function goToSlide(index) {
-            slides[currentSlide].classList.remove('active');
-            dots[currentSlide].classList.remove('active');
-
-            currentSlide = (index + slides.length) % slides.length;
-
-            slides[currentSlide].classList.add('active');
-            dots[currentSlide].classList.add('active');
-        }
-
-        function nextSlide() {
-            goToSlide(currentSlide + 1);
-        }
-
-        function prevSlide() {
-            goToSlide(currentSlide - 1);
-        }
-
-        nextBtn.addEventListener('click', nextSlide);
-        prevBtn.addEventListener('click', prevSlide);
-
-        // Auto slide
-        let slideInterval = setInterval(nextSlide, 5000);
-
-        // Pause auto slide when hovering slider
-        const sliderContainer = document.querySelector('.slider-container');
-        sliderContainer.addEventListener('mouseenter', () => clearInterval(slideInterval));
-        sliderContainer.addEventListener('mouseleave', () => {
-            slideInterval = setInterval(nextSlide, 5000);
-        });
-
-        // Scroll Animation
-        const animateElements = document.querySelectorAll('.animate-on-scroll');
-
-        function checkScroll() {
-            animateElements.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-
-                if (elementTop < windowHeight * 0.85) {
-                    element.classList.add('visible');
-                }
-            });
-
-            // Special handling for section titles and subtitles
-            document.querySelectorAll('.section-title, .section-subtitle, .slogan').forEach(el => {
-                if (el.getBoundingClientRect().top < window.innerHeight * 0.85) {
-                    el.classList.add('visible');
-                }
-            });
-        }
-
-        window.addEventListener('scroll', checkScroll);
-        window.addEventListener('load', checkScroll);
-    </script>
+    <script src="https://umanjaures.github.io/ADBietry_dataJS/adaccueil.js"></script>
 </body>
 
 </html>
