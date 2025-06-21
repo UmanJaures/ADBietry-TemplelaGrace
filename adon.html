@@ -1049,7 +1049,7 @@
                     <li><a href="aqsn.html">Qui sommes-nous ?</a></li>
                     <li><a href="actualites.html">Actualités</a></li>
                     <li class="dropdown">
-                        <a href="javascript:void(0)">Annexes <i class="fas fa-chevron-down"></i></a>
+                        <a href="#">Annexes <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="beatitude.html">Église Béatitude</a></li>
                             <li><a href="adresurrection.html">Église Résurrection</a></li>
@@ -1165,8 +1165,7 @@
                 <!-- Orange Money -->
                 <div class="method-card animate-on-scroll">
                     <div class="operator-logo">
-                        <img src="https://i.postimg.cc/pTL6bTHZ/orange.png"
-                            alt="Orange Money">
+                        <img src="https://i.postimg.cc/pTL6bTHZ/orange.png" alt="Orange Money">
                     </div>
                     <h3>Orange Money</h3>
                     <div class="phone-number">05 07 08 09 10</div>
@@ -1175,8 +1174,7 @@
                 <!-- MTN Mobile Money -->
                 <div class="method-card animate-on-scroll">
                     <div class="operator-logo">
-                        <img src="https://i.postimg.cc/prn5pfvL/mtn.jpg"
-                            alt="MTN Mobile Money">
+                        <img src="https://i.postimg.cc/prn5pfvL/mtn.jpg" alt="MTN Mobile Money">
                     </div>
                     <h3>MTN Mobile Money</h3>
                     <div class="phone-number">05 07 08 09 11</div>
@@ -1185,8 +1183,7 @@
                 <!-- Wave -->
                 <div class="method-card animate-on-scroll">
                     <div class="operator-logo">
-                        <img src="https://i.postimg.cc/28Zn6Dj7/wave.png"
-                            alt="Wave">
+                        <img src="https://i.postimg.cc/28Zn6Dj7/wave.png" alt="Wave">
                     </div>
                     <h3>Wave</h3>
                     <div class="phone-number">05 07 08 09 12</div>
@@ -1195,8 +1192,7 @@
                 <!-- Moov Money -->
                 <div class="method-card animate-on-scroll">
                     <div class="operator-logo">
-                        <img src="https://i.postimg.cc/SsPVBfVS/moov.png"
-                            alt="Moov Money">
+                        <img src="https://i.postimg.cc/SsPVBfVS/moov.png" alt="Moov Money">
                     </div>
                     <h3>Moov Money</h3>
                     <div class="phone-number">05 07 08 09 13</div>
@@ -1281,44 +1277,38 @@
     </footer>
 
     <script>
-        // Mobile Menu Toggle
-       function initMobileMenu() {
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const navLinks = document.querySelector('.nav-links');
-    const dropdowns = document.querySelectorAll('.dropdown');
+        //Mobile navigation
+        function initNavigation() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+            const dropdowns = document.querySelectorAll('.dropdown');
 
-    mobileMenuBtn.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        const icon = mobileMenuBtn.querySelector('i');
-        if (icon.classList.contains('fa-bars')) {
-            icon.classList.remove('fa-bars');
-            icon.classList.add('fa-times');
-        } else {
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
+            // Toggle du menu mobile
+            mobileMenuBtn.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                mobileMenuBtn.querySelector('i').classList.toggle('fa-bars');
+                mobileMenuBtn.querySelector('i').classList.toggle('fa-times');
+            });
+
+            // Gestion des dropdowns sur mobile
+            dropdowns.forEach(dropdown => {
+                dropdown.addEventListener('click', (e) => {
+                    if (window.innerWidth <= 992) {
+                        const isDropdownLink = e.target.closest('.dropdown-menu a');
+
+                        // Si on clique sur un lien dans le sous-menu, on laisse le lien fonctionner normalement
+                        if (isDropdownLink) return;
+
+                        // Sinon, on toggle le menu déroulant
+                        e.preventDefault();
+                        dropdown.classList.toggle('open');
+                        const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+                        dropdownMenu.classList.toggle('active');
+                    }
+                });
+            });
         }
-    });
 
-    dropdowns.forEach(dropdown => {
-        // On cible le lien parent (qui ouvre le dropdown)
-        const toggleLink = dropdown.querySelector('a');
-
-        toggleLink.addEventListener('click', (e) => {
-            if (window.innerWidth <= 992) {
-                const href = toggleLink.getAttribute('href');
-
-                // On bloque seulement si href="#" ou href="javascript:void(0)"
-                if (href === '#' || href === 'javascript:void(0)') {
-                    e.preventDefault();
-                    dropdown.classList.toggle('open');
-                    const dropdownMenu = dropdown.querySelector('.dropdown-menu');
-                    dropdownMenu.classList.toggle('active');
-                }
-                // Sinon c'est un vrai lien, on laisse passer la navigation normalement
-            }
-        });
-    });
-}
         // Header Scroll Effect
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
@@ -1362,6 +1352,9 @@
                 });
             });
         });
+
+        // Lancer l'initialisation quand le DOM est prêt
+        document.addEventListener('DOMContentLoaded', initNavigation);
     </script>
 </body>
 
